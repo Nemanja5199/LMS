@@ -12,9 +12,6 @@ ma, sigma = 4, 3.5
 sum= 0.09*np.random.normal(ma, sigma, 999)
 A= D[:n] + sum
 
-print(A)
-print('_____________')
-print(D)
 
 M=25
 w= np.zeros(M)
