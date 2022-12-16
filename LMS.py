@@ -1,11 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import random
-# Generated signal
+
+
+# Generisan signal
 t= np.arange(0.001,1,0.001)
 D= 2*np.sin(2*np.pi*20*t)
 
-# Generated signal with noise
+# Signal sa sumom
 n= np.size(D)
 #sum=0.0009*np.asarray(random.sample(range(0,n),n)) 
 ma, sigma = 4, 3.5
@@ -23,16 +25,16 @@ for i in range(M+1,n):
     E[i]=D[i] - np.dot(wi,A[i:i-M:-1])
     wi= wi+ 2*mu*E[i]*A[i:i-M:-1]
 
-# Estimate signal
+# Predpostavljen signal
 Est= np.zeros(n)
 for i in range(M+1,n):
     j=A[i:i-M:-1]
     Est[i]= np.dot(wi,j)
 
-# Calculate signal error
+# Kalkulisan signal kreske
 Err= np.transpose(Est) - D
 
-# Display signals
+# Prikaz signala
 plt.subplot(4,1,1)
 plt.title('Desired signal')
 plt.plot(D)
