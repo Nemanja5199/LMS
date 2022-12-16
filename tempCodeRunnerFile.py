@@ -1,2 +1,1 @@
-
-plt.subplot(4,1,3)
+= 2*np.sin(2*np.pi*10*t)
